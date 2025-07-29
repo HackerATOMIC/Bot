@@ -1,4 +1,5 @@
 const { Client, GatewayIntentBits, PermissionsBitField } = require('discord.js');
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -7,7 +8,6 @@ const client = new Client({
   ],
 });
 
-const TOKEN = 'SEU_NOVO_TOKEN_AQUI'; // Cole aqui o token novo
 const forbiddenWords = ['venda', 'compro', 'comprar', 'vender'];
 const logChannels = new Map();
 
@@ -50,4 +50,5 @@ client.on('messageCreate', async (message) => {
   }
 });
 
-client.login(MTM5OTc2Mjc0NDEzOTU3OTQ4NA.G_9qqu.70twxSewvMKS3wwiuWAj6K0ZYVeAfRSYPdVLTQ);
+// Faz login usando variável de ambiente TOKEN
+client.login(process.env.TOKEN);
